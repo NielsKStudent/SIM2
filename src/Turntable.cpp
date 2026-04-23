@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 static constexpr int PWM_MIN = 40;   // minimaal om wrijving te overwinnen
-static constexpr int PWM_MAX = 60;   // max snelheid
+static constexpr int PWM_MAX = 90;   // max snelheid
 static constexpr float KP = 1.2;     // krachtfactor
 static constexpr float TOLERANCE = 1.0;
 
