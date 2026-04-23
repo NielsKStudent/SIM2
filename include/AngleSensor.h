@@ -4,9 +4,9 @@
 class AngleSensor {
 public:
     void begin();
-    float getAngle();        // 0–360 logisch
-    void calibrateForward(); // huidige positie = vooruit
+    float getAngle();   // geeft -180 .. +180
+    void zero();        // huidige positie = 0°
 
 private:
-    float _offset = 0.0;
+    float _zeroOffset = 0.0;
 };

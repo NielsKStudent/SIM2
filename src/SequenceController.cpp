@@ -1,8 +1,11 @@
 #include "SequenceController.h"
 #include <Arduino.h>
+#include "ArmController.h"
 
 #define WAIT_TIME_MS 5000
 #define HOME_SEGMENT 1
+
+
 
 SequenceController::SequenceController(Turntable& table)
 : _table(table) {}
@@ -56,7 +59,6 @@ void SequenceController::update() {
     case RUNNING:
         Serial.print("Bij segment ");
         Serial.println(_segments[_index]);
-        startWait();
 
         _index++;
         if (_index < _count) {

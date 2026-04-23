@@ -17,5 +17,5 @@ private:
     static constexpr int NUM_SEGMENTS = 24;
     static constexpr float SEGMENT_ANGLE = 360.0 / NUM_SEGMENTS;
     static constexpr float ANGLE_TOLERANCE = 1.0;
-    static constexpr uint8_t PWM_VALUE = 25;
+    static constexpr uint8_t PWM_VALUE = 150;
 };

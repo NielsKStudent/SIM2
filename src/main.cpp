@@ -4,7 +4,7 @@
 #include "Turntable.h"
 #include "SequenceController.h"
 
-Motor motor(9, 7, 8);
+Motor motor(6, 5, 4);
 AngleSensor sensor;
 Turntable table(motor, sensor);
 SequenceController sequence(table);
@@ -34,6 +34,11 @@ void loop() {
 
         Serial.print("> ");
         Serial.println(cmd);
+
+        if (cmd == "zero") {
+            sensor.zero();
+            Serial.println("NULPUNT GEZET");
+        }
 
         if (cmd.startsWith("seq ")) {
             int segments[20];
@@ -69,4 +74,6 @@ void loop() {
         lastSequence = nowMillis;
         sequence.update();
     }
+    Serial.println(sensor.getAngle());
+    delay(100);
 }
